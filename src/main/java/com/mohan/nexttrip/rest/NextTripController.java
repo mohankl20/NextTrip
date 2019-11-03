@@ -12,13 +12,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-
 @RestController
 @RequestMapping("/api/nexttrip")
-public class NextTripTimeController {
+public class NextTripController {
 
-    private static final Logger logger = LoggerFactory.getLogger(NextTripTimeController.class);
+    private static final Logger logger = LoggerFactory.getLogger(NextTripController.class);
 
     @Autowired
     private NextTripService nextTripService;
@@ -28,11 +26,12 @@ public class NextTripTimeController {
 
 
     @GetMapping(value = "/{route}/{stop}/{direction}")
-    public ResponseEntity<String> getNextTripWaitTime(@PathVariable(name = "route") String route, @PathVariable(name = "stop") String stop, @PathVariable(name = "direction") String direction)
+    public ResponseEntity<String> getNextTripDepartureTime(@PathVariable(name = "route") String route, @PathVariable(name = "stop")
+                                                            String stop, @PathVariable(name = "direction") String direction)
     {
-        logger.trace(">> getNextTripWaitTime");
+        logger.trace(">> getNextTripDepartureTime");
         String nextBusDepartureTime = nextTripService.nextTripDepartureTime(route, stop, direction);
-        logger.trace("<< getNextTripWaitTime");
+        logger.trace("<< getNextTripDepartureTime");
         return new ResponseEntity<>(nextBusDepartureTime, HttpStatus.OK);
 
     }
