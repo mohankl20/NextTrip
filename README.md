@@ -26,6 +26,7 @@ $ nextbus.py “METRO Blue Line” “Target Field Station Platform 1” “sout
 How to Run:
 just run the NextTripApplication.java
 
-Accesing the Next Trip time API
+Accesing the Next Trip time API:
+
 GET
 http://host:port/api/nexttrip/{route}/{stop}/{direction}
