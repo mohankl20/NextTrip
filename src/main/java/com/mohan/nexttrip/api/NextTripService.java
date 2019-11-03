@@ -1,6 +1,6 @@
 package com.mohan.nexttrip.api;
 
-public interface NextBusService
+public interface NextTripService
 {
     /**
      * get the next departure time for a given route,stop and direction.

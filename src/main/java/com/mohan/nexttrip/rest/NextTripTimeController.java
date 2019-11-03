@@ -1,6 +1,6 @@
 package com.mohan.nexttrip.rest;
 
-import com.mohan.nexttrip.api.NextBusService;
+import com.mohan.nexttrip.api.NextTripService;
 import com.mohan.nexttrip.helper.NextTripTimeHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,17 +21,17 @@ public class NextTripTimeController {
     private static final Logger logger = LoggerFactory.getLogger(NextTripTimeController.class);
 
     @Autowired
-    NextBusService nextBusService;
+    private NextTripService nextTripService;
 
     @Autowired
     NextTripTimeHelper nextTripTimeHelper;
 
 
     @GetMapping(value = "/{route}/{stop}/{direction}")
-    public ResponseEntity<String> getNextTripWaitTime(@PathVariable(name = "route") String route, @PathVariable(name = "stop") String stop, @PathVariable(name = "direction") String direction) throws IOException
+    public ResponseEntity<String> getNextTripWaitTime(@PathVariable(name = "route") String route, @PathVariable(name = "stop") String stop, @PathVariable(name = "direction") String direction)
     {
         logger.trace(">> getNextTripWaitTime");
-        String nextBusDepartureTime = nextBusService.nextTripDepartureTime(route, stop, direction);
+        String nextBusDepartureTime = nextTripService.nextTripDepartureTime(route, stop, direction);
         logger.trace("<< getNextTripWaitTime");
         return new ResponseEntity<>(nextBusDepartureTime, HttpStatus.OK);
 

@@ -1,7 +1,7 @@
 package com.mohan.nexttrip.api.impl;
 
 import com.mohan.nexttrip.DirectionsEnum;
-import com.mohan.nexttrip.api.NextBusService;
+import com.mohan.nexttrip.api.NextTripService;
 import com.mohan.nexttrip.exception.BusException;
 import com.mohan.nexttrip.helper.NextTripTimeHelper;
 import com.mohan.nexttrip.rest.dto.RouteDTO;
@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class NextTripTimeServiceImpl implements NextBusService
+public class NextTripServiceImpl implements NextTripService
 {
-    private static final Logger logger = LoggerFactory.getLogger(NextTripTimeServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(NextTripServiceImpl.class);
 
     @Autowired
-    NextTripTimeHelper nextTripTimeHelper;
+    private NextTripTimeHelper nextTripTimeHelper;
 
     @Override
     public String nextTripDepartureTime(String route, String stop, String dir)
