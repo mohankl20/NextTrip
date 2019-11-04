@@ -1,6 +1,6 @@
 # NextTrip
 
-API which will tell you how long it is until
+REST API developed with Spring boot which will tell you how long it is until
 the next bus on “BUS ROUTE” leaving from “BUS STOP NAME” going “DIRECTION”
 using the api defined at http://svc.metrotransit.org/
 
@@ -30,7 +30,7 @@ $ nextbus.py “METRO Blue Line” “Target Field Station Platform 1” “sout
 
 
 How to Run:
-just run the NextTripApplication.java
+Run NextTripApplication.java
 
 Accesing the Next Trip time API:
 
