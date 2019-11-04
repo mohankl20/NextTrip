@@ -117,19 +117,19 @@ public class NextTripServiceImpl implements NextTripService
     {
         logger.trace(">> getDirection");
         DirectionsEnum direction=null;
-        if(dir.equals("north"))
+        if(dir.equalsIgnoreCase("north"))
         {
             direction = DirectionsEnum.NORTHBOUND;
         }
-        else if(dir.equals("south"))
+        else if(dir.equalsIgnoreCase("south"))
         {
             direction = DirectionsEnum.SOUTHBOUND;
         }
-        else if(dir.equals("east"))
+        else if(dir.equalsIgnoreCase("east"))
         {
             direction = DirectionsEnum.EASTBOUND;
         }
-        else if (dir.equals("west"))
+        else if (dir.equalsIgnoreCase("west"))
         {
             direction = DirectionsEnum.WESTBOUND;
         }
